@@ -4,8 +4,14 @@ const { RNCustomCode } = NativeModules;
 
 import { initialize } from "@blocklienterprise/blockli";
 import config from "@src/build_config.json";
+import ParagraphBlock from "./components/ParagraphBlock";
 
 export const applyCustomCode = async (externalCodeSetup) => {
+
+  const {
+    blocksApi
+  } = externalCodeSetup;
+
   const blockli_config = {
     license: "JT7DHN714HCJ2FY", // Enter your 15 digit Blockli App Kit license key here. See your account dashboard at https://blockli.dev/dashboard
     app_id: config.app_id,
@@ -16,4 +22,8 @@ export const applyCustomCode = async (externalCodeSetup) => {
   };
 
   await initialize(blockli_config);
+
+  blocksApi.addCustomBlockRender("core/paragraph", (props) => (
+    <ParagraphBlock {...props} />
+  ));
 };
