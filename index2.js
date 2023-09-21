@@ -7,7 +7,7 @@ import config from "@src/build_config.json";
 
 export const applyCustomCode = async (externalCodeSetup) => {
   const blockli_config = {
-    license: "XXXXXXXXXXXXXXX", // Enter your 15 digit Blockli App Kit license key here. See your account dashboard at https://blockli.dev/dashboard
+    license: "JT7DHN714HCJ2FY", // Enter your 15 digit Blockli App Kit license key here. See your account dashboard at https://blockli.dev/dashboard
     app_id: config.app_id,
     code: externalCodeSetup,
     //bcdn_token: "BUNNYCDN-TOKEN-AUTH-KEY",
